@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist"))); //go to backend directory and then root and then frontend and then dist
 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html")); //in production server the react application in this file at index.html
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html")); //if we go to any other path than api/notes then in production serve the react application in this file at index.html
   });
 }
 //connectDB(); this also works
